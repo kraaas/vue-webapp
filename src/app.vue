@@ -19,34 +19,41 @@ import 'alloytouch/transform'
 
 export default {
   mounted() {
-      let target = document.querySelector("#scroller");
-      new AlloyTouch({
-        touch: "#wrapper", //反馈触摸的dom
-        vertical: true, //不必需，默认是true代表监听竖直方向touch
-        target: target, //运动的对象
-        property: "translateY", //被滚动的属性
-        sensitivity: 1, //不必需,触摸区域的灵敏度，默认值为1，可以为负数
-        factor: 1, //不必需,默认值是1代表touch区域的1px的对应target.y的1
-        min: window.innerHeight - 45 - 48 - 2000, //不必需,滚动属性的最小值
-        max: 0, //不必需,滚动属性的最大值
-        step: 40,
-        animationEnd: function(value) {
-          console.log(value);
-        }
+      setTimeout(() => {
+        let scroller = document.querySelector("#scroller");
+        let header = document.querySelector("#header");
+        let footer = document.querySelector("#footer");
+        let scrollerHeight = scroller.offsetHeight;
+        let headerHeight = header.offsetHeight;
+        let footerHeight = footer.offsetHeight;
+        let min = window.innerHeight - headerHeight - footerHeight - scrollerHeight
+        Transform(scroller, true);
+        new AlloyTouch({
+          touch: "#wrapper", //反馈触摸的dom
+          vertical: true, //不必需，默认是true代表监听竖直方向touch
+          target: scroller, //运动的对象
+          property: "translateY", //被滚动的属性
+          sensitivity: 1, //不必需,触摸区域的灵敏度，默认值为1，可以为负数
+          factor: 1, //不必需,默认值是1代表touch区域的1px的对应target.y的1
+          min: min > 0 ? 0 : min, //不必需,滚动属性的最小值
+          max: 0, //不必需,滚动属性的最大值
+          step: 40,
+          animationEnd: function(value) {
+            console.log(value);
+          }
+        })
       })
     },
     components: {
       vHeader,
       vFooter,
       home
-    },
-
+    }
 }
 </script>
 <style>
 .main {
   height: 100%;
-  padding: 1.066667rem 0 1.333333rem 0;
 }
 
 #wrapper {
