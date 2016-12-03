@@ -2,7 +2,7 @@
   <main class="main">
     <v-header></v-header>
     <section class="wrap">
-      <user-center></user-center>
+      <router-view></router-view>
     </section>
     <v-footer></v-footer>
   </main>

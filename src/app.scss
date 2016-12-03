@@ -5,3 +5,13 @@ html,
 body {
 	height: 100%;
 }
+a {
+	color: #333;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}

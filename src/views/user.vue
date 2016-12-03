@@ -9,45 +9,47 @@
       <ul class="entry-wrap entry-user">
         <li class="entry-item">
           <div class="entry-name">
-          	<i class="icon fa fa-file-photo-o"></i>
-          	<span class="text">相册</span>
+            <i class="icon fa fa-file-photo-o"></i>
+            <span class="text">相册</span>
           </div>
           <i class="arrow fa fa-angle-right"></i>
         </li>
         <li class="entry-item">
           <div class="entry-name">
-          	<i class="icon fa fa-star"></i>
-          	<span class="text">收藏</span>
+            <i class="icon fa fa-star"></i>
+            <span class="text">收藏</span>
           </div>
           <i class="arrow fa fa-angle-right"></i>
         </li>
         <li class="entry-item">
           <div class="entry-name">
-          	<i class="icon fa fa-money"></i>
-          	<span class="text">钱包</span>
+            <i class="icon fa fa-money"></i>
+            <span class="text">钱包</span>
           </div>
           <i class="arrow fa fa-angle-right"></i>
         </li>
         <li class="entry-item">
           <div class="entry-name">
-          	<i class="icon fa fa-credit-card"></i>
-          	<span class="text">卡包</span>
+            <i class="icon fa fa-credit-card"></i>
+            <span class="text">卡包</span>
           </div>
           <i class="arrow fa fa-angle-right"></i>
         </li>
       </ul>
       <ul class="entry-wrap entry-sys">
-      	<li class="entry-item">
-          <div class="entry-name">
-          	<i class="icon fa fa-edit"></i>
-          	<span class="text">修改信息</span>
-          </div>
-          <i class="arrow fa fa-angle-right"></i>
+        <li class="entry-item">
+          <router-link to="/user/edit">
+            <div class="entry-name">
+              <i class="icon fa fa-edit"></i>
+              <span class="text">修改信息</span>
+            </div>
+            <i class="arrow fa fa-angle-right"></i>
+          </router-link>
         </li>
         <li class="entry-item">
           <div class="entry-name">
-          	<i class="icon fa fa-gear"></i>
-          	<span class="text">系统设置</span>
+            <i class="icon fa fa-gear"></i>
+            <span class="text">系统设置</span>
           </div>
           <i class="arrow fa fa-angle-right"></i>
         </li>
@@ -89,38 +91,39 @@ export default {
 }
 
 .entry-wrap {
-	background-color: #fff;
+  background-color: #fff;
   .entry-item {
-  	position: relative;
+    position: relative;
     line-height: 1.2rem;
     height: 1.2rem;
     border-bottom: 1px solid #e4e4e4;
-    .icon{
-    	display: inline-block;
-    	margin:0 0.4rem;
-    	width: 0.4rem;
-    	vertical-align: middle;
-    	font-size: 0.453333rem;
-    	color: #11acda;
+    .icon {
+      display: inline-block;
+      margin: 0 0.4rem;
+      width: 0.4rem;
+      vertical-align: middle;
+      font-size: 0.453333rem;
+      color: #11acda;
     }
-    .text{
-    	vertical-align: middle;
+    .text {
+      vertical-align: middle;
     }
     .entry-name {
       font-size: 0.32rem;
       color: #252525;
     }
-    .arrow{
-    	position: absolute;
-    	top: 50%;
-    	right: 0.4rem;
-    	transform: translateY(-50%);
-    	font-size: 0.373333rem;
-    	color: #989696;
+    .arrow {
+      position: absolute;
+      top: 50%;
+      right: 0.4rem;
+      transform: translateY(-50%);
+      font-size: 0.373333rem;
+      color: #989696;
     }
   }
 }
-.entry-sys{
-	margin-top: 0.4rem
+
+.entry-sys {
+  margin-top: 0.4rem
 }
 </style>

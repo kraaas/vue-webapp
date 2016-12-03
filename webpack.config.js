@@ -52,7 +52,8 @@ let config = {
 		alias: {
 			'commons': path.join(__dirname, 'src/commons'),
 			'components': path.join(__dirname, 'src/components'),
-			'views': path.join(__dirname, 'src/views')
+			'views': path.join(__dirname, 'src/views'),
+			'vue': path.join(__dirname, 'node_modules/vue/dist/vue.js'),
 		},
 		extensions: ['', '.js', '.vue'],
 		fallback: [path.join(__dirname, 'node_modules')]
