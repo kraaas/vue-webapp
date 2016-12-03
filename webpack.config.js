@@ -32,6 +32,13 @@ let config = {
 				limit: 10,
 				name: 'imgs/[name].[hash:7].[ext]'
 			}
+		}, {
+			test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+			loader: 'url-loader',
+			query: {
+				limit: 10000,
+				name: '../fonts/[name].[hash:7].[ext]'
+			}
 		}]
 	},
 	plugins: [
@@ -45,7 +52,7 @@ let config = {
 		alias: {
 			'commons': path.join(__dirname, 'src/commons'),
 			'components': path.join(__dirname, 'src/components'),
-			'pages': path.join(__dirname, 'src/pages')
+			'views': path.join(__dirname, 'src/views')
 		},
 		extensions: ['', '.js', '.vue'],
 		fallback: [path.join(__dirname, 'node_modules')]
