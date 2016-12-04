@@ -1,17 +1,33 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
-	height: 100%;
-}
-a {
-	color: #333;
+  height: 100%;
 }
 
-.fade-enter-active, .fade-leave-active {
+a {
+  color: #333;
+}
+
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity .5s
 }
-.fade-enter, .fade-leave-active {
+
+.fade-enter,
+.fade-leave-active {
   opacity: 0
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 0.4rem;
+  transform: translateY(-50%);
+  font-size: 0.373333rem;
+  color: #cecece;
 }

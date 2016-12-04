@@ -3,7 +3,7 @@ import User from './views/user'
 import UserEdit from './views/user_edit'
 
 const routes = [{
-	path: '/user',
+	path: '/',
 	component: {
 		template: '<div><router-view></router-view></div>'
 	},

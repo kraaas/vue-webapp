@@ -1,9 +1,12 @@
 <template>
   <div class="user">
     <section class="userinfo">
-      <span class="avatar"></span>
-      <span class="nickname">kraaas</span>
-      <span class="skill">React, Vue, Angular</span>
+      <img class="avatar" :src="user.avatar">
+      <span class="nickname">{{user.nickname}}</span>
+      <span class="skill">{{user.job}}</span>
+      <router-link  to="/edit">
+        <span class="edit"><i class="fa fa-gear"></i></span>
+      </router-link>
     </section>
     <section class="entry">
       <ul class="entry-wrap entry-user">
@@ -38,7 +41,7 @@
       </ul>
       <ul class="entry-wrap entry-sys">
         <li class="entry-item">
-          <router-link to="/user/edit">
+          <router-link to="/edit">
             <div class="entry-name">
               <i class="icon fa fa-edit"></i>
               <span class="text">修改信息</span>
@@ -60,21 +63,32 @@
 </template>
 <script>
 export default {
-  components: {}
+  data() {
+    return {
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.state.user
+    }
+  }
 }
 </script>
 <style lang="sass">
 @import "../assets/style/mixin.scss";
 .userinfo {
+  position: relative;
   padding: 0.4rem 0;
   height: 4.0rem;
   background-color: #11acda;
-  span {
+  .nickname, 
+  .skill{
     display: block;
     text-align: center;
     color: #fff;
   }
   .avatar {
+    display: block;
     margin: 0 auto;
     width: 2.0rem;
     height: 2.0rem;
@@ -87,6 +101,16 @@ export default {
   }
   .skill {
     color: #b8e2ef;
+  }
+  .edit {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    width: 0.666667rem;
+    border: 1px solid #dedede;
+    border-radius: 0.666667rem;
+    text-align: center;
+    color: #dedede;
   }
 }
 
@@ -112,14 +136,7 @@ export default {
       font-size: 0.32rem;
       color: #252525;
     }
-    .arrow {
-      position: absolute;
-      top: 50%;
-      right: 0.4rem;
-      transform: translateY(-50%);
-      font-size: 0.373333rem;
-      color: #989696;
-    }
+    
   }
 }
 
