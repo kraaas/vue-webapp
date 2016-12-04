@@ -24,7 +24,9 @@
         {{user.description}}
       </div>
     </section>
-    <button class="save" type="button" @click="saveUser">保存</button>
+    <button class="save" type="button" @click="saveUser" :disabled="loading">
+      {{loading ? '保存中...' : '保存'}}
+    </button>
   </div>
 </template>
 <script>
@@ -34,7 +36,9 @@ import {
 
 export default {
   data() {
-    return {}
+    return {
+      loading: false
+    }
   },
   computed: {
     user() {
@@ -43,8 +47,10 @@ export default {
   },
   methods: {
     saveUser() {
+      this.loading = !this.loading
       this.$store.dispatch('updateUser', this.user).then(() => {
-      	alert('done!')
+        this.loading = !this.loading
+      	this.$router.back()
       })
     }
   }
