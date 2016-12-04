@@ -1,4 +1,8 @@
-export default {
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+const store = {
   state: {
     user: {
       avatar: 'https://raw.githubusercontent.com/kraaas/vue-webapp/master/src/assets/img/avatar%403x.png',
@@ -27,3 +31,5 @@ export default {
     }
   }
 }
+
+export default new Vuex.Store(store)
